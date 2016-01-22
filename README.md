@@ -6,6 +6,7 @@ ________________________________
         avr-objdump -zS source.elf | python avr-cycles.py
 The script simply replaces instructions found in the .csv table line by line.
 * example output snippet 
+
         [...]
         ISR(TIMER1_COMPA_vect) {
         2fc:   1f 92           [[PUSH -> 2]]   r1
