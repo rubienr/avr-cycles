@@ -1,11 +1,6 @@
-Translate Instructions to Cycles
-________________________________
-* compile your source
-* translate the dump 
-
-        avr-objdump -zS source.elf | python avr-cycles.py
-The script simply replaces instructions found in the .csv table line by line.
-* example output snippet 
+Example
+_______
+Decorate instructions with MCU cycles:
 
 | Normal | Translated |
 |-----|------|
@@ -24,7 +19,15 @@ The script simply replaces instructions found in the .csv table line by line.
 |` 2cc: ff 93 push r31`             |` 2cc: ff 93 [[PUSH -> 2]] r31`|
 |`[...]`|`[...]`|
 
-Obtain Cycle Table
+Translate Instructions to Cycles
+________________________________
+* compile your source
+* translate the dump 
+
+        avr-objdump -zS source.elf | python avr-cycles.py
+The script simply replaces instructions found in the .csv table line by line.
+
+Obtain new Cycle Tables
 __________________
 * convert the manual to text
 
@@ -34,8 +37,9 @@ __________________
 * store the columns to 
 
         instruction-tables/atmel-xxx-xxx.csv
+* eventualy send me a pull request
 
-Configuration - avr-cycles.conf
+Configuration - `avr-cycles.conf`
 _____________
 Modify the `instructionTable` field for your needs:
 
