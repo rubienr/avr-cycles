@@ -1,5 +1,9 @@
+AVR cycles
+==========
+Avr cycles allows you to decorate an object dump with the cyles used per instruction.
+
 Example
-_______
+-------
 Decorate instructions with MCU cycles:
 
 | Normal | Translated |
@@ -20,7 +24,7 @@ Decorate instructions with MCU cycles:
 |`[...]`|`[...]`|
 
 Translate Instructions to Cycles
-________________________________
+--------------------------------
 * compile your source
 * translate the dump 
 
@@ -28,7 +32,7 @@ ________________________________
 The script simply replaces instructions found in the .csv table line by line.
 
 Obtain new Cycle Tables
-__________________
+-----------------------
 * convert the manual to text
 
         pdftotext -layout atmel-xxx-datasheet.pdf foo.txt
@@ -40,7 +44,7 @@ __________________
 * eventualy send me a pull request
 
 Configuration - `avr-cycles.conf`
-_____________
+---------------------------------
 Modify the `instructionTable` field for your needs:
 
         {
